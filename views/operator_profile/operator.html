@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Google Font Architects D  -->
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <!-- Google Font Patrick Hand SC -->
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="shortcut icon" href="images/icon.ico" />
+    <!-- Main CSS -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Media-queries CSS -->
+    <link href="/css/media-queries.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top" role="navigation" id="profileNav">
+      <div class="container">
+        <h1 id="logo">Android Manager</h1>
+          <a href="/logout" id="logoutLink"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a>
+          <a href="/updateprofile" id="profileLink"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update your profile</a>
+      </div>
+    </nav>
+        {{#logged_in}}
+
+    <div class="homepagesection-divider" id="hr1">
+      <h2> Welcome, {{email}}! You can now create your own Android registry.</h2>
+    </div>
+
+     <div class="homepagesection-divider" id="footerHr">
+            <a href="/portfolio">Click here to view all Androids or add a new Android to registry</a>
+     </div>
+
+        {{/logged_in}}
+
+  </body>
+  <!-- Font awesome  -->
+  <script src="https://use.fontawesome.com/e21ea2f3ad.js"></script>
+  <!-- Jquery  -->
+  <script src="/js/jquery.js"></script>
+  <!-- Main JS -->
+  <script src="/js/script.js"></script>
+</html>
