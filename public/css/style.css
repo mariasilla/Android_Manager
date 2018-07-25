@@ -167,3 +167,7 @@ float: left;
 #profileNav{
    background-color: rgba(204, 204, 204, 0.8);
 }
+#updateInfo{
+  font-size: 14px;
+  color: #2c15d7;
+}

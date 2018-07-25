@@ -35,7 +35,7 @@
        {{#androids}}
 
        <li>Android # {{id}} => Name:"{{name}}", Avatar:"To be Uploaded", Skills:"{{skills}}", Reliability:"{{reliability}}", Status:"{{status}}", Jobs: </li>
-       <a href="/update_android/{{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Android Num:{{id}}</a>
+       <a href="/update_android/{{id}}" id="updateInfo"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Android Num:{{id}} or assign Android to a Job</a>
               <form action="/delete_android/{{id}}?_method=delete" method="post">
              <button type="sumbit" method="post" class="btn btn-primary" id="deleteBtn">Delete Android Num:{{id}}</button>
              </form>

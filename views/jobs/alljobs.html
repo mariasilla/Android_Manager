@@ -37,7 +37,7 @@
        <li>Job # {{id}} => Name:"{{name}}". Description:{{description}}. Complexity: {{complexity}} </li>
       <a href="/showassignedandroids/{{id}}"><button type="sumbit" class="btn btn-primary" id="deleteBtn">View Assigned Androids of Job Num:{{id}}</button></a>
 
-       <a href="/update_job/{{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Job Num:{{id}}</a>
+       <a href="/update_job/{{id}}" id="updateInfo"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Job Num:{{id}}</a>
               <form action="/delete_job/{{id}}?_method=delete" method="post">
              <button type="sumbit" method="post" class="btn btn-primary" id="deleteBtn">Delete Job Num:{{id}}</button>
              </form>

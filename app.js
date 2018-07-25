@@ -194,7 +194,19 @@ app.post('/add_new_android', function(req,res){
         "email": req.session.operator.email,
         "id": id
       };
-      res.render('androids/update_android', data);
+
+      // db
+      //  .any("SELECT * FROM jobs")
+      //  .then(function(info){
+      //     jobs_array = {
+      //      jobs: info,
+      //      security: data
+      //     }
+      // console.log(jobs_array);
+      // res.render('androids/update_android', jobs_array);
+        res.render('androids/update_android', data);
+      //  })
+
     } else {
       res.render('home/index');
     }
@@ -213,6 +225,7 @@ app.post('/add_new_android', function(req,res){
         res.send('Failed to update android. Please go back and try again.');
       }).then(function(){
         res.redirect("/androids");
+
       });
 
   });
@@ -326,6 +339,7 @@ app.post('/add_new_android', function(req,res){
           res.send('Failed to update a job. Please go back and try again.');
         }).then(function(){
           res.redirect("/jobs");
+
         });
 
     });
