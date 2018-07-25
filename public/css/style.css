@@ -2,12 +2,12 @@ body{
 /*background: url('http://i.imgur.com/Mgc3gcj.jpg') no-repeat center center fixed;*/
 background-size: cover;
 text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
-font-family: 'Patrick Hand SC', cursive;
+font-family: 'Roboto Mono', monospace;
 }
 
 #logo {
   text-align: center;
-  font-family: 'Architects Daughter', cursive, sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-size: 90px;
 }
 
@@ -18,12 +18,12 @@ font-family: 'Patrick Hand SC', cursive;
 }
 #loginBtn,#joinBtn,#uploadBtn{
   margin: 0 35%;
-  background-color: #0d821f;
+  background-color: #19f3d7;
   color: black;
   border: none;
   font-size: 23px;
 }
-#modal-close-button{
+/*#modal-close-button{
   margin: 0 43%;
   background-color: #0d821f;
   color: black;
@@ -36,7 +36,7 @@ font-family: 'Patrick Hand SC', cursive;
   color: black;
   border: none;
   font-size: 13px;
-}
+}*/
 #signup_form, #uploadForm{
   margin-top: 150px;
   background-color: rgba(0, 0, 0, 0);
@@ -44,7 +44,7 @@ font-family: 'Patrick Hand SC', cursive;
 }
 
 #signup_link {
-  color: #0d821f;
+  color: #19f3d7;
   text-decoration: none;
   font-size: 20px;
   font-weight: 800;
@@ -104,7 +104,7 @@ footer {
   font-weight: 800;
 }
 #footerHr a{
-    color: #0d821f;
+    color: #19f3d7;
     text-decoration: none;
     font-size: 50px;
 }

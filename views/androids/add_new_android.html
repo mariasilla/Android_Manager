@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Google Font Do Hyeon  -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <!-- Google Font Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Media-queries CSS -->
+    <link href="/css/media-queries.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top" role="navigation">
+       <div class="container">
+         <h1 id="logo">Android Manager</h1>
+           <a href="/logout" id="logoutLink"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
+                        <a href="../androids/" id="profileLink"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Androids</a>
+       </div>
+   </nav>
+{{#logged_in}}
+    <!-- Form starts here -->
+    <div class="container">
+      <form class="well form-horizontal" id="uploadForm" action="/add_new_android" method="post">
+       <fieldset>
+        <legend class="contact-legend">Register a new Android here</legend>
+
+       <!-- Text input-->
+        <div class="form-group">
+          <label for="inputName" class="col-lg-2 control-label">Name</label>
+            <div class="col-md-4 inputGroupContainer">
+             <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-file-text" aria-hidden="true"></i></span>
+               <input name="name" type="text" class="form-control" id="inputName" placeholder="Choose a Name that's at least 5 characters long">
+           </div>
+         </div>
+      </div>
+
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label for="inputSkills" class="col-lg-2 control-label">Skills</label>
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+        <input name="skills" type="text" class="form-control" id="inputSkills" placeholder="Skills">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label for="inputStatus" class="col-lg-2 control-label">Please specify the status of an Android. Choose between 1 or 0.</label>
+     <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+        <span class="input-group-addon"></span>
+           <input name="status" type="text" class="form-control" id="inputStatus" placeholder="Status">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label"></label>
+       <div class="col-md-4">
+        <button type="submit" class="btn btn-primary addValue" id="uploadBtn">Upload!</button>
+       </div>
+     </div>
+    </fieldset>
+  </form>
+ </div>
+
+  {{/logged_in}}
+
+   </body>
+   <!-- Font awesome  -->
+   <script src="https://use.fontawesome.com/e21ea2f3ad.js"></script>
+   <!-- Jquery  -->
+   <script src="/js/jquery.js"></script>
+   <!-- Bootstrap Core JS -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <!-- Main JS -->
+   <script src="/js/script.js"></script>
+</html>
