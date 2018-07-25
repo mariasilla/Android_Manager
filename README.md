@@ -1,6 +1,7 @@
 Maria Sylla
 
 Android Manager application for InteticsLab TestTask.
+App is deployed to Heroku: https://android-manager-msylla.herokuapp.com/
 
 Set up:
 - clone git repository

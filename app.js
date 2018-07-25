@@ -30,12 +30,12 @@ app.use(session({
 }))
 
 
-//connect to android_manager database
-// var db = pgp('postgres://kuzia@localhost:5432/android_manager');
+connect to android_manager database
+var db = pgp('postgres://kuzia@localhost:5432/android_manager');
 
 //connect to heroku database
-var herokuDb = 'postgres://xnuaznegmxejfo:f74da890eb918ea5f39c60b68aa321c6b46a1d78aae48783863bbcd71562d111@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d88l1cspi6sssj';
-var db=pgp(herokuDb);
+// var herokuDb = 'postgres://xnuaznegmxejfo:f74da890eb918ea5f39c60b68aa321c6b46a1d78aae48783863bbcd71562d111@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d88l1cspi6sssj';
+// var db=pgp(herokuDb);
 
 //render Home page
 app.get('/', function(req, res){
