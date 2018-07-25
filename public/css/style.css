@@ -1,5 +1,5 @@
 body{
-/*background: url('http://i.imgur.com/Mgc3gcj.jpg') no-repeat center center fixed;*/
+background: url('https://i.imgur.com/FpOT95O.jpg') no-repeat center center fixed;
 background-size: cover;
 text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
 font-family: 'Roboto Mono', monospace;
@@ -23,20 +23,7 @@ font-family: 'Roboto Mono', monospace;
   border: none;
   font-size: 23px;
 }
-/*#modal-close-button{
-  margin: 0 43%;
-  background-color: #0d821f;
-  color: black;
-  border: none;
-  font-size: 23px;
-}
-#modal-delete-button{
-  margin-top: -83px;
-  background-color: red;
-  color: black;
-  border: none;
-  font-size: 13px;
-}*/
+
 #signup_form, #uploadForm{
   margin-top: 150px;
   background-color: rgba(0, 0, 0, 0);
@@ -104,7 +91,7 @@ footer {
   font-weight: 800;
 }
 #footerHr a{
-    color: #19f3d7;
+    color: #0c051d;
     text-decoration: none;
     font-size: 50px;
 }
