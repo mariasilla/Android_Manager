@@ -23,6 +23,11 @@ font-family: 'Roboto Mono', monospace;
   border: none;
   font-size: 23px;
 }
+#deleteBtn {
+  background-color: #19f3d7;
+  color: black;
+  border: none;
+}
 
 #signup_form, #uploadForm{
   margin-top: 150px;

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Google Font Do Hyeon  -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <!-- Google Font Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- Media-queries CSS -->
+    <link href="/css/media-queries.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-fixed-top" role="navigation">
+      <div class="container">
+        <h1 id="logo">Android Manager</h1>
+          <a href="/logout" id="logoutLink"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
+          <a href="/operator_profile" id="profileLink"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Operator profile</a>
+      </div>
+    </nav>
+
+        <!-- <br> -->
+        {{#security.logged_in}}
+
+    <div class="homepagesection-divider" id="hr1">
+      <h2 id="portHeading">All Jobs are listed below.</h2>
+    </div>
+
+        <div class="content">
+     <ul>
+       {{#jobs}}
+
+       <li>Job # {{id}} => Name:"{{name}}". Description:{{description}}. Complexity: {{complexity}} </li>
+      <a href="/showassignedandroids/{{id}}"><button type="sumbit" class="btn btn-primary" id="deleteBtn">View Assigned Androids of Job Num:{{id}}</button></a>
+
+       <a href="/update_job/{{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Job Num:{{id}}</a>
+              <form action="/delete_job/{{id}}?_method=delete" method="post">
+             <button type="sumbit" method="post" class="btn btn-primary" id="deleteBtn">Delete Job Num:{{id}}</button>
+             </form>
+        {{/jobs}}
+    </ul>
+     </div>
+
+
+     <div class="homepagesection-divider" id="footerHr">
+            <a href="/add_new_job">Add a new Job</a>
+     </div>
+
+        {{/security.logged_in}}
+
+  </body>
+  <!-- Font awesome  -->
+  <script src="https://use.fontawesome.com/e21ea2f3ad.js"></script>
+  <!-- Jquery  -->
+  <script src="/js/jquery.js"></script>
+  <!-- Bootstrap Core JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Main JS -->
+  <script src="/js/script.js"></script>
+</html>

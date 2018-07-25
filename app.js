@@ -123,7 +123,6 @@ app.get('/androids/', function(req, res){
 
         res.render('androids/allandroids', androids_array)
      })
-    // res.render('profile/portfolio', data);
   } else {
     res.render('home/index');
   }
@@ -214,12 +213,124 @@ app.post('/add_new_android', function(req,res){
         res.send('Failed to update android. Please go back and try again.');
       }).then(function(){
         res.redirect("/androids");
-        // res.send('User updated.');
       });
 
   });
 
+//*********************************************************************
+  //Render all Jobs to one page
+  app.get('/jobs/', function(req, res){
+    var data;
 
+    if(req.session.operator){
+         data = {
+        "logged_in": true,
+        "email": req.session.operator.email
+        };
+
+      db
+         .any("SELECT * FROM jobs")
+         .then(function(info){
+            jobs_array = {
+             jobs: info,
+             security: data
+            }
+
+          res.render('jobs/alljobs', jobs_array)
+       })
+
+    } else {
+      res.render('home/index');
+    }
+  })
+
+  //Render add_new_job form
+  app.get('/add_new_job', function(req, res){
+    var data ;
+    if(req.session.operator){
+      data = {
+        "logged_in": true,
+        "email": req.session.operator.email
+      };
+      res.render('jobs/add_new_job', data);
+    } else {
+      res.render('home/index');
+    }
+  });
+
+  // Add a new Job
+  app.post('/add_new_job', function(req,res){
+    var data;
+    if(req.session.operator){
+      console.log(req.body);
+      data = req.body;
+
+                  db.none(
+                    "INSERT INTO jobs (name, description, complexity) VALUES ($1, $2, $3)",
+                    [data.name, data.description, data.complexity]
+                  ).catch(function(e){
+                    res.send('Failed to add a job: ' + e + 'Please go back and try again');
+
+                  }).then(function(){
+                    // res.render('profile/portfolio', data);
+                    res.redirect("/jobs");
+                  });
+
+         } else {
+            res.render('home/index');
+         }
+    });
+
+    // Delete a Job
+    app.delete('/delete_job/:id', function(req, res){
+      console.log(req.params.id)
+          var id = req.params.id;
+          if(req.session.operator){
+            db.none(
+                "DELETE FROM jobs WHERE id = $1", id
+            ).then(function(){
+            res.redirect("/jobs");
+            });
+
+          } else {
+            res.render('home/index');
+          }
+    })
+
+    //Render update_job form
+    app.get('/update_job/:id', function(req, res){
+      var data ;
+      var id = req.params.id;
+      console.log(id);
+      if(req.session.operator){
+        data = {
+          "logged_in": true,
+          "email": req.session.operator.email,
+          "id": id
+        };
+        res.render('jobs/update_job', data);
+      } else {
+        res.render('home/index');
+      }
+    });
+
+    //Update Job info
+    app.put('/update_job/:id', function(req, res){
+      var id = req.params.id;
+      console.log(id);
+      var data = req.body;
+      db
+        .none("UPDATE jobs SET name = $1,description = $2, complexity = $3 WHERE id = $4",
+          [data.name, data.description, data.complexity, id]
+        ).catch(function(){
+          res.send('Failed to update a job. Please go back and try again.');
+        }).then(function(){
+          res.redirect("/jobs");
+        });
+
+    });
+
+//********************************************************************************
 //Logout
 app.get('/logout', function(req, res){
   req.session.operator = false;

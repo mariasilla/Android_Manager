@@ -19,7 +19,7 @@
       <div class="container">
         <h1 id="logo">Android Manager</h1>
           <a href="/logout" id="logoutLink"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out</a>
-          <a href="/operator_profile" id="profileLink"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to profile</a>
+          <a href="/operator_profile" id="profileLink"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Operator profile</a>
       </div>
     </nav>
 
@@ -34,11 +34,11 @@
      <ul>
        {{#androids}}
 
-              <li>Android # {{id}} => Name:"{{name}}", Avatar:"To be Uploaded", Skills:"{{skills}}", Reliability:"{{reliability}}", Status:"{{status}}", Jobs: </li>
+       <li>Android # {{id}} => Name:"{{name}}", Avatar:"To be Uploaded", Skills:"{{skills}}", Reliability:"{{reliability}}", Status:"{{status}}", Jobs: </li>
+       <a href="/update_android/{{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Android Num:{{id}}</a>
               <form action="/delete_android/{{id}}?_method=delete" method="post">
-             <button type="sumbit" method="post" class="btn btn-primary">Delete Android Num:{{id}}</button>
+             <button type="sumbit" method="post" class="btn btn-primary" id="deleteBtn">Delete Android Num:{{id}}</button>
              </form>
-             <a href="/update_android/{{id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update info about Android Num:{{id}}</a>
         {{/androids}}
     </ul>
      </div>
